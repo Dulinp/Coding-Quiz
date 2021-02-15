@@ -9,7 +9,7 @@ var questions = [{
     answer: "//"
 },
 {
-    title: "Which of the following is included in the Box Model?",
+    title: "Which of the following is not included in the Box Model?",
     choices: ["padding", "margin", "content", "title"],
     answer: "title"
 },
