@@ -1,11 +1,11 @@
 var questions = [{
-    title: "Which of the following is a HTML element?",
-    choices: ["body", "a href", "h1", "p"],
-    answer: "a href"
+    title: "Which of the following is not a HTML element?",
+    choices: ["body", "href", "h1", "p"],
+    answer: "href"
 },
 {
-    title: "How do you add a comment in html?",
-    choices: ["/*", "==", "//", "+="],
+    title: "How do you add a comment in javascript?",
+    choices: ["/*", "==", "//", "!--"],
     answer: "//"
 },
 {
