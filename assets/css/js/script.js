@@ -1,4 +1,4 @@
-//Set query selector variables
+//Set query selector and element id variables
 var timerElm = document.querySelector("#time");
 var startButton = document.querySelector("#start-button");
 var startScreen = document.querySelector("#starting-screen");
@@ -15,31 +15,24 @@ var lostResults = document.querySelector("#loser-results");
 var gameLoser = document.querySelector("#loser-screen");
 var playAgain = document.querySelector("#play-again");
 var winResults = document.querySelector("#winner-results");
-var form = document.querySelector("form");
 var winnerTitle = document.querySelector("#winner-title");
-var userInitials = document.getElementById("high-score");
 var submitBtn = document.getElementById("submit");
 var userResults = document.getElementById("user-results");
-var scoreList = document.getElementById("list-scores");
 var noInput = document.getElementById("not-initials");
 
 //Set other variables
 var secondsLeft = 75;
 var currentQuestion = 0;
 var score = 0;
-var highScores = [];
 var timer;
 
 
-//Load local storage of previous scores
+//These hide the winner results, questions, and play again button from the initial page
+winResults.style.display = "none";
+questionsDiv.style.display = "none";
+playAgain.style.display = "none";
 
-//Create listener for view highscores button
-// winResults.style.display = "none";
 
-//Setting JSON for highscores
-// if (JSON.parse(localStorage.getItem("score")) !== null) {
-//     highScores = JSON.parse(localStorage.getItem("score"));
-// } 
 
 //Timer Funcgtion
 function setTimer() {
@@ -64,11 +57,10 @@ function setTimer() {
 //Target start button on click to hide, start quiz, and start timer
 startButton.addEventListener("click", function () {
     startScreen.style.display = "none";
-
+    questionsDiv.style.display = "block";
+   
     setTimer();
 });
-
-//Timer countdown starts
 
 //Function for presenting questions
 function questionStart() {
@@ -119,10 +111,21 @@ option4.addEventListener("click", answerOptionSelected);
 //Function to show results for game loser
 function loserResults() {
     clearInterval(setInterval);
+    playAgain.style.display = "block";
     lostResults.style.display = "block";
     gameLoser.textContent = "Game Over You Lose";
     playAgain.textContent = "Play Again?";
 }
+
+//Event listener for button click to play quiz again
+playAgain.addEventListener("click", function(){
+    window.location.href = "index.html";
+})
+
+//Event listener for enter button to submint score
+submitBtn.addEventListener("click", function() {
+    window.localStorage.href = "highscores.html";
+});
 
 // Function to show results for winner
 function winnerResults() {
@@ -132,109 +135,17 @@ function winnerResults() {
     winnerTitle.textContent = "You Did It!";
     userResults.textContent = "Your score is " + score;
 
-
-
     saveScore();
     // renderScores();
 };
 
-// submitBtn.addEventListener("click", toHighScores);
-// function saveScore() {
-
-//     var newScore = {
-//         initials: userInitials.nodeValue,
-//         highscore: score
-//     };
-//     console.log(newScore);
-//     highScores.push(newScore);
-//     console.log(highScores);
-//     localStorage.setItem("scores", JSON.stringify(highScores));
-// }
-
-function saveScore() {
-    var newScore = {
-        initials: userInitials.value,
-        highscore: score
-    };
-    console.log(newScore);
-    window.localStorage.setItem("newScore", JSON.stringify(newScore));
-}
-
-submitBtn.addEventListener("click", function() {
-    window.localStorage.href = "highscores.html";
-});
-
-
-
-function renderScores(){
-    scoreList.textContent = userInitials.value + score;
-
-    for (var i = 0; i < highScores.length; i++) {
-        var userScore = highScores[i];
-
-        var li = document.createElement("li");
-        li.textContent = userScore;
-        li.setAttribute("data-index", i);
-
-        scoreList.appendChild(li);
-    }
-}
-
-    // var storedScores = JSON.parse(localStorage.getItem("highScores"));
-
-    // if (storedScores !== null) {
-    //     highScores = storedScores;
-    // }
-
-
-
-// function saveScore(){
-//     userInitials.value = "";
-
-//     enterScore.addEventListener("click", function (){
-//         if (userInitials.value === "") {
-//             noInput.textContent = "Please Enter Initials";
-
-//         } else {
-//            var savedScores = JSON.parse(localStorage.getItem("savedScores")) || [];
-//            var newHighScore = {
-//                initials: userInitials.value,
-//                score: score
-//            };
-
-//            savedScores.push(newHighScore);
-//            localStorage.setItem("savedScores", JSON.stringify(savedScores));
-//         }
-//     });
-
-
-// }
-
-
-//How to save highscores
-// enterScore.addEventListener("click", function (event){
-//     event.preventDefault();
-
-//     var userInput = userInitials.value;
-//     score = secondsLeft;
 
 
 
 
 
-//     localStorage.setItem("newScore", JSON.stringify(newScore));
 
-//     var lastScore = localStorage.getItem("newScore");
 
-//     console.log("lastScore", jSON.parse(lastScore));
-// });
-
-// function renderScore() {
-//     var lastScore = JSON.parse(localStorage.getItem("newScore"));
-//     if (lastScore !== null) {
-//         userInitials.textContent = score + userInitials.value;
-//     }
-// }
 
 
 
