@@ -1,7 +1,9 @@
 # Homework4 - Coding Quiz
 ## Description
 This coding quiz challenge generated using html, css, and javascript.
+<br>
 Working application link: https://dulinp.github.io/Coding-Quiz/
+
 ![Demo Picture](https://github.com/Dulinp/Coding-Quiz/blob/main/assets/images/Coding-Quiz-Demo.png)
 ## Requirements
 ### User Story
