@@ -1,4 +1,4 @@
-# Homework3
+# Homework4 - Coding Quiz
 ## Description
 This coding quiz challenge generated using html, css, and javascript.
 Working application link: https://dulinp.github.io/Coding-Quiz/
