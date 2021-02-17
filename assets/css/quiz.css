@@ -1,9 +1,93 @@
 body {
-    background-color: white
+    background-color: white;
+    font-family: 'Libre Baskerville', serif;
 }
 
-header {
+ a {
+   text-decoration: none;
+   color: white;
+   padding: 20px;
    
-
 }
 
+p {
+   text-align: center; 
+}
+
+h1 {
+    text-align: center;
+}
+
+button {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Libre Baskerville', serif;
+    background-color: purple;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+}
+
+.game-timer {
+   float: right;
+}
+
+#starting-screen {
+    align-items: center;
+}
+
+.wrapper {
+    margin-right: 200px;
+    margin-left: 200px;
+    text-align: center; 
+}
+
+#start-button {
+    width: 40%;
+}
+
+#option1 {
+    background-color: purple;
+    padding: 10px;
+    color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 10px;
+    
+}
+
+#option2 {
+    background-color: purple;
+    padding: 10px;
+    color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 10px;  
+}
+
+#option3 {
+    background-color: purple;
+    padding: 10px;
+    color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 10px;  
+}
+
+#option4 {
+    background-color: purple;
+    padding: 10px;
+    color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 10px;  
+}
+
+#play-again {
+    background-color: purple;
+    padding: 10px;
+    color: white;
+    margin-left: 100px;
+    margin-right: 100px;
+}
