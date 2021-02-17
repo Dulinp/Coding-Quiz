@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
 </head>
 
 <body>
     <header>
-        <div id="scores"><a href="highscores.html">View High Scores</a></div>
+        <button id="scores"><a href="highscores.html">View High Scores</a></button>
         <div class="game-timer">Time:<span id="time"> 0</span>
         </div>
 
@@ -18,18 +19,33 @@
     <div class="wrapper">
         <div id="starting-screen" class="start">
             <h1>Coding Quiz Challenge</h1>
-            <p></p>
+            <p>Welcome to the coding quiz challenge! You have 75 seconds to complete all 8 questions. Be warned! If you get a question wrong 15 seconds will be taken off of your time. The more correct answers you get and the faster you are the better your score will be. Good luck!</p>
             <button id="start-button">Start Quiz</button>
         </div>
-        <div id="questions" class="hide">
+
+        <div id="questions">
             <h2 id="question-title"></h2>
-            <div id="choices" class="choices"> 
+            <div id="choices"> 
                 <div class="answer-option" id="option1"></div>
                 <div class="answer-option" id="option2"></div>
                 <div class="answer-option" id="option3"></div>
                 <div class="answer-option" id="option4"></div>
             </div>
             <h3 id="right-wrong"></h3>
+        </div>
+
+        <div id="loser-results">
+            <h1 id="loser-screen"></h1>
+            <h2 id="play-again"></h2>
+        </div>
+        <div id="winner-results">
+            <form id="form">
+                <h1 id="winner-title"></h1>
+                <h2 id="user-results"></h2>
+                <input type="text" placeholder="Enter initials here" id="high-score" />
+                <button id="submit">Enter</button>
+                <h3 id="not-initials"></h3>
+            </form>
         </div>
 
 
